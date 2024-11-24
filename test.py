@@ -27,8 +27,18 @@ for i in range(len(geneinfo)):
     for j in range(len(druginfo)):
         CYP2C19 = {drugid[druginfo[j]]: geneinfo[i]}
         testdrug = druginfo[j]
-        testgene = geneinfo[i]
-        formatted_lookupkey = json.dumps(testgene)
+        test= len(geneinfo[i].items())
+        if test > 1: #geneinfo is a list of dictionaries
+            keys = geneinfo[i]["lookupkey"]
+            for i in keys:
+                if 'CYP2C19' != i:
+                    del keys[i]
+                    testgene = keys
+                    formatted_lookupkey = json.dumps(testgene)
+                break
+        else:
+            testgene = geneinfo[i]
+            formatted_lookupkey = json.dumps(testgene)
 
     # Encode the JSON as a URL-encoded string
 #encoded_data = str(full_dip).replace("'", '"')
@@ -45,17 +55,19 @@ for i in range(len(geneinfo)):
         if not data:
             continue
         else:
+            for items in range(len(data)):
+                CYP2C19[drugid[druginfo[j]]].update(data[items])
             #CYP2C19[drugid[druginfo[j]]].update(data)
             #def write_json(new_data, filename='data.json'):
-            with open("CYP2C19Rec.json", 'r+') as file:
+        with open("CYP2C19Rec.json", 'r+') as file:
                     # First we load existing data into a dict.
-                file_data = json.load(file)
+            file_data = json.load(file)
                     # Join new_data with file_data inside emp_details
-                file_data.update(data)
+            file_data.update(CYP2C19)
                     # Sets file's current position at offset.
-                file.seek(0)
+            file.seek(0)
                     # convert back to json.
-                json.dump(file_data, file, indent=4)
+            json.dump(file_data, file, indent=4)
             # with open("CYP2C19Rec.json", "w") as outfile:
             #     json.dump(CYP2C19, outfile)
             #     json.update(data)

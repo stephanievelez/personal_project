@@ -1,5 +1,62 @@
 {
     "amitriptyline": {
-        "CYP2C19": "Ultrarapid Metabolizer"
+        "CYP2C19": "Rapid Metabolizer",
+        "id": 5873982,
+        "guidelineid": 100414,
+        "drugid": "RxNorm:704",
+        "implications": {
+            "CYP2D6": "n/a",
+            "CYP2C19": "Increased metabolism of tertiary amines compared to normal metabolizers; Greater conversion of tertiary amines to secondary amines may affect response or side effects"
+        },
+        "drugrecommendation": "Avoid tertiary amine use due to potential for sub-optimal response. Consider alternative drug not metabolized by CYP2C19. TCAs without major CYP2C19 metabolism include the secondary amines nortriptyline and desipramine. If a tertiary amine is warranted, utilize therapeutic drug monitoring to guide dose adjustments.",
+        "classification": "Optional",
+        "phenotypes": {
+            "CYP2D6": "No Result",
+            "CYP2C19": "Rapid Metabolizer"
+        },
+        "activityscore": {
+            "CYP2D6": "No Result",
+            "CYP2C19": "n/a"
+        },
+        "allelestatus": {},
+        "lookupkey": {
+            "CYP2D6": "No Result",
+            "CYP2C19": "Rapid Metabolizer"
+        },
+        "population": "general",
+        "comments": "Dosing recommendations only apply to higher initial doses of TCAs for treatment of conditions such as depression. See other considerations for dosing recommendations for conditions where lower initial doses are used, such as neuropathic pain. Titrate dose to observed clinical response with symptom improvement and minimal (if any) side effects.",
+        "version": 1,
+        "dosinginformation": false,
+        "alternatedrugavailable": false,
+        "otherprescribingguidance": false
+    },
+    "citalopram": {
+        "CYP2C19": "Ultrarapid Metabolizer",
+        "id": 5874254,
+        "guidelineid": 100413,
+        "drugid": "RxNorm:2556",
+        "implications": {
+            "CYP2C19": "Increased metabolism of citalopram and escitalopram to less active compounds when compared to CYP2C19 rapid and normal metabolizers. Lower plasma concentrations decrease the probability of clinical benefit."
+        },
+        "drugrecommendation": "Consider a clinically appropriate alternative antidepressant not predominantly metabolized by CYP2C19. If citalopram or escitalopram are clinically appropriate, and adequate efficacy is not achieved at standard maintenance dosing, consider titrating to a higher maintenance dose.",
+        "classification": "Strong",
+        "phenotypes": {
+            "CYP2C19": "Ultrarapid Metabolizer"
+        },
+        "activityscore": {
+            "CYP2C19": "n/a"
+        },
+        "allelestatus": {},
+        "lookupkey": {
+            "CYP2C19": "Ultrarapid Metabolizer"
+        },
+        "population": "general",
+        "comments": "Drug-drug interactions and other patient characteristics (e.g., age, renal function, liver function) should be considered when adjusting dose or selecting an alternative therapy.",
+        "version": 1,
+        "dosinginformation": false,
+        "alternatedrugavailable": false,
+        "otherprescribingguidance": false
+    }
+}false
     }
 }
