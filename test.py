@@ -22,8 +22,8 @@ def CPIC_api():
         else:
             geneinfo.append(v)
 
-    geneinfo= geneinfo[4:]
-    druginfo = druginfo[4:]
+    #geneinfo= geneinfo[4:]
+    #druginfo = druginfo[4:]
 # testdrug =druginfo[7]
 # testgene = geneinfo[0]
     for i in range(len(geneinfo)):
