@@ -26,7 +26,7 @@ qa = RetrievalQA.from_chain_type(
     retriever=db.as_retriever(),
 )
 
-print(qa.invoke("What is the recommendation for amitryptilline for someone with a *17/*17 diplotype?"))
+#print(qa.invoke("What is the recommendation for amitryptilline for someone with a *17/*17 diplotype?"))
 
 #Defining the list of tool objects to be used by LangChain.
 tools = [
@@ -56,4 +56,15 @@ agent_executor = AgentExecutor(agent=agent,
                                handle_parsing_errors=True
                                )
 
-agent_executor.invoke({"input": "I have a patient that is an intermediate metabolizer for citalopram, what is the recommendation?"}
+#response = agent_executor.invoke({"input": "I have a patient that is an intermediate metabolizer for citalopram, what is the recommendation?"})
+
+
+if __name__ == "__main__":
+    while True:
+        client_prompt = {"input": input("You: ")}
+        if client_prompt["input"].lower() in ["quit", "exit", "bye"]:
+            break
+
+        answer = agent_executor.invoke(client_prompt)
+        print(answer["output"])
+
