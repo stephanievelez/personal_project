@@ -2,7 +2,7 @@ from constants import OPENAI_API_KEY
 from langchain_openai import OpenAI
 from langchain.chains.conversation.memory import ConversationBufferWindowMemory
 from langchain.chains import RetrievalQA
-from app import retriever
+from retriever import retriever
 from langchain.agents import Tool
 from langchain.agents import create_react_agent
 from langchain import hub
@@ -64,6 +64,11 @@ if __name__ == "__main__":
         client_prompt = {"input": input("You: ")}
         if client_prompt["input"].lower() in ["quit", "exit", "bye"]:
             break
+
+        elif client_prompt["input"].lower() in ["clear", "reset"]:
+            agent_executor.memory.clear()
+            print("Memory cleared.")
+            continue
 
         answer = agent_executor.invoke(client_prompt)
         print(answer["output"])
