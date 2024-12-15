@@ -6,6 +6,7 @@ Overview
 Automates searches through the CPIC database to retrieve drug information linked to specific genes.
 
 Key functionalities:
+
 **Extract_data.py:**
 drug_info function: Extracts drug data, including drugid and drugname, to construct API URLs for further database queries.
 extract_data function: Retrieves the lookup key for the gene in question.
