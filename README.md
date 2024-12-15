@@ -18,3 +18,17 @@ Aggregates recommendations for each drug into a Python dictionary for further pr
 **test2.py:**
 Combines the JSON output from reconciled drug recommendations (based on the gene/diplotype) with gene data.
 Produces a prompt-ready JSON file containing drug recommendations, which can be used to train LLMs.
+
+**Agent Development and Deployment** 
+
+**Embedding Creation (retriever.py)**
+Generates LangChain OpenAI embeddings for data.
+Stores the embeddings in a Chroma database for later use.
+
+**Agent Construction (agent.py)**
+Utilizes the stored embeddings with LangChain’s RetrievalQA to develop an intelligent agent capable of answering pharmacogenomic queries.
+
+**Agent Deployment**
+Convert data into a document object using LangChain's dataframeLoader function.
+Use the .load() function to process the document and save it as a pickle file.
+Deploy the agent by loading the pickle file in the application.
