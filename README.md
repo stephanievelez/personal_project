@@ -32,3 +32,5 @@ Utilizes the stored embeddings with LangChain’s RetrievalQA to develop an inte
 Convert data into a document object using LangChain's dataframeLoader function.
 Use the .load() function to process the document and save it as a pickle file.
 Deploy the agent by loading the pickle file in the application.
+
+For an example on how to further deploy the agent, go to pharmacobot repository
